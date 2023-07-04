@@ -20,9 +20,9 @@ function App() {
           <Route path="/">
             <Route index element={<SignUpPage socket={socket}/>}/>
             <Route path="home/:id" element={<Home />} />
-            <Route path="game1" element={<XSS />} />
-            <Route path="game2" element={<PasswordCracker />} />
-            <Route path="game3" element={<SQLInjectionGame />} />
+            <Route path="game1/:id" element={<XSS />} />
+            <Route path="game2/:id" element={<PasswordCracker />} />
+            <Route path="game3/:id" element={<SQLInjectionGame />} />
           </Route>   
         </Routes>
       </Router>

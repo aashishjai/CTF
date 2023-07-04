@@ -93,7 +93,7 @@ function SignUpPage({socket} : HomePageProps){
 
         if (flag == true)
         {
-            navigate(`/game/${id}`)
+            navigate(`/game1/${id}`)
         }
         else
         {

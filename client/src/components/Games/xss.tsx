@@ -7,7 +7,7 @@ const XSS = () => {
   };
 
   return (
-    <iframe src="https://xss-game.appspot.com/level2" style={iframeStyle}></iframe>
+    <iframe src="https://xss-game.appspot.com/level1" style={iframeStyle}></iframe>
   );
 };
 
