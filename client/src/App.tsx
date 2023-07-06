@@ -3,6 +3,8 @@ import HomePage from './components/Home/Home';
 import XSS from './components/Games/xss';
 import PasswordCracker from './components/Games/passwordCracker';
 import SQLInjectionGame from './components/Games/sql';
+// import SQLInjectionGame2 from './components/Games/gg';
+import SqlGame from './components/Games/sqlGame';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import SignUpPage from './components/Validation/Signup';
@@ -22,7 +24,8 @@ function App() {
             <Route path="home/:id" element={<Home />} />
             <Route path="game1/:id" element={<XSS />} />
             <Route path="game2/:id" element={<PasswordCracker />} />
-            <Route path="game3/:id" element={<SQLInjectionGame />} />
+            <Route path="game3/" element={<SqlGame />} />
+            {/* <Route path="game4/" element={<SQLInjectionGame />} /> */}
           </Route>   
         </Routes>
       </Router>
