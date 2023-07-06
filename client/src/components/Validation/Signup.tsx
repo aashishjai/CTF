@@ -18,7 +18,7 @@ function containsNumbers(str:string) {
 function SignUpPage({socket} : HomePageProps){
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [listOfUsers, setListOfUsers] = useState([{_id:"", username:"",password:""}]);
+    const [listOfUsers, setListOfUsers] = useState([{_id:"", username:"",password:"",score:0}]);
     const [signedup, setSignedUp] = useState(false)
     const navigate = useNavigate();
 
