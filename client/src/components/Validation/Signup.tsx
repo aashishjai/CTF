@@ -108,14 +108,14 @@ function SignUpPage({socket} : HomePageProps){
             <div className="sampleHomePage">
             <h1 className="sampleTitle">Login</h1>
             <div className="sampleMessage">
-            <input  placeholder = "Enter Username..." onChange={(event) => {
-            setUsername(event.target.value);
-            }}></input>
-            <div>
-                <input type="password" placeholder = "Enter Password..." onChange={(event) => {
-                setPassword(event.target.value);
-            }}></input> 
-            </div>
+                <input  placeholder = "Enter Username..." onChange={(event) => {
+                setUsername(event.target.value);
+                }}></input>
+                <div>
+                    <input type="password" placeholder = "Enter Password..." onChange={(event) => {
+                    setPassword(event.target.value);
+                    }}></input> 
+                </div>
             
             <button onClick={() => loginUser()} >Sign In</button>
             <button onClick={() => setSignedUp(false)}>Don't have an account? Click here to sign up</button>
