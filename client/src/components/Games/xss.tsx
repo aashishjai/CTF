@@ -1,27 +1,69 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react"
-// import { useAlert } from 'react-alert'
+import { Socket } from "socket.io-client" 
+import { DefaultEventsMap } from "socket.io/dist/typed-events"
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
-const XSS = () => {
+interface GamePageProps {
+  socket: Socket<DefaultEventsMap, DefaultEventsMap> //this is the type for sockets 
+  //you can always add more functions/objects that you would like as props for this component
+}
+
+function XSS({socket} : GamePageProps) {
   const iframeStyle = {
     width: '100vw',
     height: '150vh',
   };
+
+  const [listOfUsers, setListOfUsers] = useState([{_id:"", username:"",password:"",score:0}]);
   const [flag, setFlag] = useState("");
   const navigate = useNavigate();
-  // const alert = useAlert();
   const { id } = useParams();
+  
+  useEffect(() => {
+
+    axios.get("http://localhost:3001/getUsers").then((response) => {
+      setListOfUsers(response.data);
+    });
+    console.log(listOfUsers);
+  }, []);
+
+  useEffect(() => {
+
+  }, [socket]);
 
   const checkflag = () => {
-    if (flag === "You can now advance to the next level.") 
+    let comparer : string
+    let checker : boolean = false
+    for (let i=0;i<listOfUsers.length;i++)
     {
-      alert("Correct flag!");
-      navigate(`/game2/${id}`);
-    } else {
-      alert("Incorrect flag, please try again");
+        // console.log(id)
+        comparer = listOfUsers[i]._id
+        console.log(comparer)
+        if (comparer === id)
+        {
+            checker=true;
+        }
     }
+    console.log(checker)
+
+    if (checker == false)
+    {
+        alert("Please login to continue")
+    }
+    else
+    {
+      if (flag === "You can now advance to the next level.") 
+      {
+        alert("Correct flag!");
+        navigate(`/game2/${id}`);
+      } else {
+        alert("Incorrect flag, please try again");
+      }
+    }
+    
   };
 
   return (
