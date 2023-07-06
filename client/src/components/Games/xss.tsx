@@ -21,6 +21,7 @@ function XSS({socket} : GamePageProps) {
   const [flag, setFlag] = useState("");
   const navigate = useNavigate();
   const { id } = useParams();
+  let myscore : number = 0;
   
   useEffect(() => {
 
@@ -31,7 +32,9 @@ function XSS({socket} : GamePageProps) {
   }, []);
 
   useEffect(() => {
-
+    socket.on("finishupdate1", (data) => {
+      axios.put("http://localhost:3001/update", {id:id, score:data.score})
+    });
   }, [socket]);
 
   const checkflag = () => {
@@ -44,6 +47,7 @@ function XSS({socket} : GamePageProps) {
         console.log(comparer)
         if (comparer === id)
         {
+            myscore = listOfUsers[i].score
             checker=true;
         }
     }
@@ -52,12 +56,14 @@ function XSS({socket} : GamePageProps) {
     if (checker == false)
     {
         alert("Please login to continue")
+        navigate(`/`);
     }
     else
     {
       if (flag === "You can now advance to the next level.") 
       {
         alert("Correct flag!");
+        socket.emit("updateScore_lev1", {userid:id, score: myscore})
         navigate(`/game2/${id}`);
       } else {
         alert("Incorrect flag, please try again");
