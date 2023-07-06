@@ -38,11 +38,45 @@ await newUser.save();
 res.json(newUser);
 });
 
+app.put("/update", async (req, res) => {
+    const fid = req.body.id
+    const updatedScore = req.body.score
+    try {
+        await UserModel.findByIdAndUpdate(fid, {$set:{score:updatedScore}})
+    
+      } catch(err) {
+        console.log(err)
+      }
+    res.json("updated");
+});
+
 server.listen(3001, () => {
 console.log("SERVER RUNS PERFECTLY!");
 });
 
+let level1 = false;
+let level2 = false;
+let lev1_arr = []
+
 io.on("connection",(socket)=>{
     console.log("user connected with a socket id", socket.id)
+    socket.on("updateScore_lev1", (myData)=>{
 
+        userid = myData.userid
+        userscore = myData.score
+        if (level1 == false)
+        {
+            level1=true;
+            userscore = userscore + 10;
+        }
+        else
+        {
+            userscore = userscore + 5;
+        }
+        if (lev1_arr.includes(userid) == false)
+        {
+            lev1_arr.push(userid)
+            socket.emit("finishupdate1", {score:userscore})
+        }
+    })
 })
