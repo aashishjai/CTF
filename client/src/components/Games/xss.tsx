@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/xssLv1.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from "react"
 import { Socket } from "socket.io-client" 
@@ -62,28 +63,35 @@ function XSS({socket} : GamePageProps) {
     {
       if (flag === "You can now advance to the next level.") 
       {
-        alert("Correct flag!");
+        alert("Congratulations! You entered the correct flag!");
         socket.emit("updateScore_lev1", {userid:id, score: myscore})
         navigate(`/game2/${id}`);
       } else {
-        alert("Incorrect flag, please try again");
+        alert("Incorrect flag. Please try again");
       }
     }
     
   };
 
   return (
-    <>
-    <div>
-    <iframe src="https://xss-game.appspot.com/level1" style={iframeStyle}></iframe>
-    </div>
-    <div>
-            <input  placeholder = "Enter Flag..." onChange={(event) => {
+    <div className='xsslv1'>
+    <div className="xsslv1-game-container">
+      <h2 className="xsslv1-game-title">XSS Game 1</h2>
+      <p className="xsslv1-game-instructions">Play one level of the game in the link below and enter the flag here:</p>
+      <br></br><p>(the flag is the last sentence from the popup acquired when the level is cleared)</p>
+        <a className="xsslv1-game-link" href="https://xss-game.appspot.com/level1">Click here for game</a>
+      <br />
+      <br />
+      <label className="xsslv1-game-label">
+        <span className="xsslv1-game-input-label">Flag:</span>
+        <input className="xsslv1-game-input" type="text" onChange={(event) => {
             setFlag(event.target.value);
-            }}></input>
-      <button onClick={() => checkflag()} >Submit</button>
+            }} />
+      </label>
+      <br />
+      <button className="xsslv1-game-submit" onClick={checkflag}>Submit</button>
     </div>
-    </>
+    </div>
   );
 };
 

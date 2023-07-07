@@ -56,7 +56,16 @@ console.log("SERVER RUNS PERFECTLY!");
 
 let level1 = false;
 let level2 = false;
-let lev1_arr = []
+let level3 = false;
+let level4 = false;
+let level5 = false;
+let level6 = false;
+let lev1_arr = [];
+let lev2_arr = [];
+let lev3_arr = [];
+let lev4_arr = [];
+let lev5_arr = [];
+let lev6_arr = [];
 
 io.on("connection",(socket)=>{
     console.log("user connected with a socket id", socket.id)
@@ -77,6 +86,101 @@ io.on("connection",(socket)=>{
         {
             lev1_arr.push(userid)
             socket.emit("finishupdate1", {score:userscore})
+        }
+    })
+    socket.on("updateScore_lev2", (myData)=>{
+
+        userid = myData.userid
+        userscore = myData.score
+        if (level2 == false)
+        {
+            level2=true;
+            userscore = userscore + 10;
+        }
+        else
+        {
+            userscore = userscore + 5;
+        }
+        if (lev2_arr.includes(userid) == false)
+        {
+            lev2_arr.push(userid)
+            socket.emit("finishupdate2", {score:userscore})
+        }
+    })
+    socket.on("updateScore_lev3", (myData)=>{
+
+        userid = myData.userid
+        userscore = myData.score
+        if (level3 == false)
+        {
+            level3=true;
+            userscore = userscore + 10;
+        }
+        else
+        {
+            userscore = userscore + 5;
+        }
+        if (lev3_arr.includes(userid) == false)
+        {
+            lev3_arr.push(userid)
+            socket.emit("finishupdate3", {score:userscore})
+        }
+    })
+    socket.on("updateScore_lev4", (myData)=>{
+
+        userid = myData.userid
+        userscore = myData.score
+        if (level4 == false)
+        {
+            level4=true;
+            userscore = userscore + 10;
+        }
+        else
+        {
+            userscore = userscore + 5;
+        }
+        if (lev4_arr.includes(userid) == false)
+        {
+            lev4_arr.push(userid)
+            socket.emit("finishupdate4", {score:userscore})
+        }
+    })
+    socket.on("updateScore_lev5", (myData)=>{
+
+        userid = myData.userid
+        userscore = myData.score
+        if (level5 == false)
+        {
+            level5=true;
+            userscore = userscore + 10;
+        }
+        else
+        {
+            userscore = userscore + 5;
+        }
+        if (lev5_arr.includes(userid) == false)
+        {
+            lev5_arr.push(userid)
+            socket.emit("finishupdate5", {score:userscore})
+        }
+    })
+    socket.on("updateScore_lev6", (myData)=>{
+
+        userid = myData.userid
+        userscore = myData.score
+        if (level6 == false)
+        {
+            level6=true;
+            userscore = userscore + 10;
+        }
+        else
+        {
+            userscore = userscore + 5;
+        }
+        if (lev6_arr.includes(userid) == false)
+        {
+            lev6_arr.push(userid)
+            socket.emit("finishupdate6", {score:userscore})
         }
     })
 })

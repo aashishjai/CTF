@@ -3,7 +3,7 @@ import HomePage from './components/Home/Home';
 import XSS from './components/Games/xss';
 import PasswordCracker from './components/Games/passwordCracker';
 import SQLInjectionGame from './components/Games/sql';
-import ClickjackingGame from './components/Games/xsslv2';
+import XssGameLv2 from './components/Games/xsslv2';
 // import SQLInjectionGame2 from './components/Games/gg';
 import SqlGame from './components/Games/sqlGame';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -24,9 +24,9 @@ function App() {
             <Route index element={<SignUpPage socket={socket}/>}/>
             <Route path="home/:id" element={<Home />} />
             <Route path="game1/:id" element={<XSS socket={socket}/>} />
-            <Route path="game2/:id" element={<PasswordCracker />} />
-            <Route path="game3/" element={<SqlGame />} />
-            <Route path="game4/" element={<ClickjackingGame/>} />
+            <Route path="game2/:id" element={<XssGameLv2 socket={socket}/>} />
+            <Route path="game3/:id" element={<SqlGame socket={socket}/>} />
+            {/* <Route path="game4/" element={<Z/>} /> */}
           </Route>   
         </Routes>
       </Router>
