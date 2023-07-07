@@ -1,52 +1,52 @@
-.sql {
-  background-color: #1a1a1a;
+.xss {
+  background-color: #0e1538;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
 
-.sql-game-container {
+.xss-game-container {
   width: 400px;
   text-align: center;
   padding: 20px;
-  background-color: #1a1a1a;
+  background-color: #0e1538;
   color: #fff;
   border-radius: 10px;
 }
 
-.sql-game-title {
+.xss-game-title {
   font-size: 28px;
   font-weight: bold;
-  color: #00ff00;
+  color: #00bfff;
   margin-bottom: 20px;
 }
 
-.sql-game-instructions {
+.xss-game-instructions {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.sql-game-link {
+.xss-game-link {
   font-size: 16px;
-  color: #00ff00;
+  color: #00bfff;
   text-decoration: none;
   margin-bottom: 30px;
 }
 
-.sql-game-label {
+.xss-game-label {
   display: block;
   margin-bottom: 10px;
   text-align: left;
 }
 
-.sql-game-input-label {
+.xss-game-input-label {
   display: block;
   font-size: 18px;
   margin-bottom: 5px;
 }
 
-.sql-game-input {
+.xss-game-input {
   width: 100%;
   padding: 8px;
   font-size: 16px;
@@ -56,17 +56,17 @@
   border-radius: 4px;
 }
 
-.sql-game-submit {
+.xss-game-submit {
   padding: 10px 20px;
   font-size: 18px;
   color: #fff;
-  background-color: #e60000;
+  background-color: #003399;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 
-.sql-game-submit:hover {
-  background-color: #990000;
+.xss-game-submit:hover {
+  background-color: #002b80;
 }

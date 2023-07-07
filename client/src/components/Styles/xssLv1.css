@@ -1,52 +1,52 @@
-.sql {
-  background-color: #1a1a1a;
+.xsslv1 {
+  background-color: #0f1928;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
 
-.sql-game-container {
+.xsslv1-game-container {
   width: 400px;
   text-align: center;
   padding: 20px;
-  background-color: #1a1a1a;
-  color: #fff;
+  background-color: #0f1928;
+  color: #00ffff;
   border-radius: 10px;
 }
 
-.sql-game-title {
+.xsslv1-game-title {
   font-size: 28px;
   font-weight: bold;
-  color: #00ff00;
+  color: #00ffff;
   margin-bottom: 20px;
 }
 
-.sql-game-instructions {
+.xsslv1-game-instructions {
   font-size: 18px;
   margin-bottom: 20px;
 }
 
-.sql-game-link {
+.xsslv1-game-link {
   font-size: 16px;
-  color: #00ff00;
+  color: #00ffff;
   text-decoration: none;
   margin-bottom: 30px;
 }
 
-.sql-game-label {
+.xsslv1-game-label {
   display: block;
   margin-bottom: 10px;
   text-align: left;
 }
 
-.sql-game-input-label {
+.xsslv1-game-input-label {
   display: block;
   font-size: 18px;
   margin-bottom: 5px;
 }
 
-.sql-game-input {
+.xsslv1-game-input {
   width: 100%;
   padding: 8px;
   font-size: 16px;
@@ -56,17 +56,17 @@
   border-radius: 4px;
 }
 
-.sql-game-submit {
+.xsslv1-game-submit {
   padding: 10px 20px;
   font-size: 18px;
   color: #fff;
-  background-color: #e60000;
+  background-color: #00ccff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
 
-.sql-game-submit:hover {
-  background-color: #990000;
+.xsslv1-game-submit:hover {
+  background-color: #0099cc;
 }
