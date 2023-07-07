@@ -2,8 +2,7 @@ import React from 'react';
 import HomePage from './components/Home/Home';
 import XSS from './components/Games/xss';
 import XSS4 from './components/Games/xsslv4';
-import PasswordCracker from './components/Games/passwordCracker';
-import SQLInjectionGame from './components/Games/sql';
+import SqlGame2 from './components/Games/SqlGame2';
 
 import XSS3 from './components/Games/xsslv3';
 import XssGameLv2 from './components/Games/xsslv2';
@@ -30,7 +29,8 @@ function App() {
             <Route path="game2/:id" element={<XssGameLv2 socket={socket}/>} />
             <Route path="game3/:id" element={<SqlGame socket={socket}/>} />
             <Route path="game4/:id" element={<XSS3 socket={socket}/>} />
-            <Route path="game5" element={<XSS4 socket={socket}/>} />
+            <Route path="game5/:id" element={<XSS4 socket={socket}/>} />
+            <Route path="game6/:id" element={<SqlGame2 socket={socket}/>} />
 
           </Route>   
         </Routes>
