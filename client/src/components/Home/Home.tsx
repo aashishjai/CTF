@@ -1,11 +1,12 @@
 import React from 'react';
+import '../Styles/finalpage.css';
+
 
 const Home = () => {
   return (
-    <div>
-      <button>Game 1</button>
-      <button>Game 2</button>
-      <button>Game 3</button>
+    <div className="container">
+      <h1 className="title">Congratulations!</h1>
+      <p className="message">You have successfully captured all the flags.</p>
     </div>
   );
 };
