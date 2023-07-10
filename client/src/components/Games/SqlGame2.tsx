@@ -37,10 +37,13 @@ const SqlGame2 = ({socket} : GamePageProps) => {
     setInput(e.target.value);
   };
 
-  const handleAlert = () => {
+  const handleAlert = async () => {
     // const targetText = "Login was successful!  Welcome maxmiller!";
     let comparer : string
     let checker : boolean = false
+    await axios.get("http://localhost:3001/getUsers").then((response) => {
+      setListOfUsers(response.data);
+    });
     for (let i=0;i<listOfUsers.length;i++)
     {
         // console.log(id)

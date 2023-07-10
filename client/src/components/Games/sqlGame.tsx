@@ -37,24 +37,27 @@ const SqlGame = ({socket} : GamePageProps) => {
     setInput(e.target.value);
   };
 
-  const handleAlert = () => {
+  const handleAlert = async () => {
     // const targetText = "Login was successful!  Welcome maxmiller!";
     let comparer : string
     let checker : boolean = false
+    await axios.get("http://localhost:3001/getUsers").then((response) => {
+      setListOfUsers(response.data);
+    });
     for (let i=0;i<listOfUsers.length;i++)
     {
         // console.log(id)
         comparer = listOfUsers[i]._id
-        console.log(comparer)
         if (comparer === id)
         {
             myscore = listOfUsers[i].score
+            console.log(myscore)
             checker=true;
         }
     }
     console.log(checker)
 
-    if (checker == false)
+    if (checker === false)
     {
         alert("Please login to continue")
         navigate(`/`);
