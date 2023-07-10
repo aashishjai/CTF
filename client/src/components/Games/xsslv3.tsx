@@ -61,7 +61,7 @@ function XSS3({socket} : GamePageProps) {
     }
     else
     {
-      if (flag === "You can now advance to the next level.") 
+      if (flag === "Such hacking much wow") 
       {
         alert("Congratulations! You entered the correct flag!");
         socket.emit("updateScore_lev4", {userid:id, score: myscore})
@@ -78,7 +78,7 @@ function XSS3({socket} : GamePageProps) {
     <div className="xsslv1-game-container">
       <h2 className="xsslv1-game-title">XSS Game 3</h2>
       <p className="xsslv1-game-instructions">Play one level of the game in the link below and enter the flag here:</p>
-      <br></br><p>(the flag is the last sentence from the popup acquired when the level is cleared)</p>
+      <br></br><p>(the flag can be asked from any moderator once the level is cleared)</p>
         <a className="xsslv1-game-link" href="https://xss-game.appspot.com/level2">Click here for game</a>
       <br />
       <br />

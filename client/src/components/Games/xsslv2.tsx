@@ -76,7 +76,7 @@ const XssGameLv2 = ({socket} : GamePageProps) => {
     <div className="xss-game-container">
       <h2 className="xss-game-title">XSS Game Level 2</h2>
       <p className="xss-game-instructions">Play a level of the game in the link below and enter the flag here:</p>
-      <br></br><p>(the flag is the text acquired when the game is cleared)</p>
+      <br></br><p>(the flag is the only text in green when the game is cleared)</p>
         <a className="xss-game-link" href="https://alf.nu/alert1?world=alert&level=alert0">Click here for game</a>
       <br />
       <br />

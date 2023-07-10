@@ -61,7 +61,7 @@ function XSS4({socket} : GamePageProps) {
     }
     else
     {
-      if (flag === "You can now advance to the next level.") 
+      if (flag === "Welcome to the dark side") 
       {
         alert("Congratulations! You entered the correct flag!");
         socket.emit("updateScore_lev5", {userid:id, score: myscore})
@@ -78,7 +78,7 @@ function XSS4({socket} : GamePageProps) {
     <div className="sql-game-container">
       <h2 className="sql-game-title">XSS Game 4</h2>
       <p className="sql-game-instructions">Play one level of the game in the link below and enter the flag here:</p>
-      <br></br><p>(the flag is the last sentence from the popup acquired when the level is cleared)</p>
+      <br></br><p>(the flag can be asked from any moderator once the level is cleared)</p>
         <a className="sql-game-link" href="https://xss-game.appspot.com/level3">Click here for game</a>
       <br />
       <br />
