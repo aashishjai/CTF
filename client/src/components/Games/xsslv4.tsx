@@ -65,8 +65,7 @@ function XSS4({socket} : GamePageProps) {
       {
         alert("Congratulations! You entered the correct flag!");
         socket.emit("updateScore_lev5", {userid:id, score: myscore})
-        // navigate(`/game6/${id}`);
-        navigate(`/home/${id}`);
+        navigate(`/game6/${id}`);
       } else {
         alert("Incorrect flag. Please try again");
       }

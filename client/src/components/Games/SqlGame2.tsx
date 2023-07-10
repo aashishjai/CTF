@@ -28,7 +28,7 @@ const SqlGame2 = ({socket} : GamePageProps) => {
   }, []);
 
   useEffect(() => {
-    socket.on("finishupdate3", (data) => {
+    socket.on("finishupdate6", (data) => {
       axios.put("http://localhost:3001/update", {id:id, score:data.score})
     });
   }, [socket]);

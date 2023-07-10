@@ -28,7 +28,7 @@ const XssGameLv2 = ({socket} : GamePageProps) => {
   }, []);
 
   useEffect(() => {
-    socket.on("finishupdate2", (data) => {
+    socket.on("finishupdate3", (data) => {
       axios.put("http://localhost:3001/update", {id:id, score:data.score})
     });
   }, [socket]);
@@ -63,8 +63,8 @@ const XssGameLv2 = ({socket} : GamePageProps) => {
       if (input === "Win!") 
       {
         alert("Congratulations! You entered the correct flag!");
-        socket.emit("updateScore_lev2", {userid:id, score: myscore})
-        navigate(`/game3/${id}`);
+        socket.emit("updateScore_lev3", {userid:id, score: myscore})
+        navigate(`/game4/${id}`);
       } else {
         alert("Incorrect flag. Please try again");
       }

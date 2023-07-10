@@ -28,7 +28,7 @@ const SqlGame = ({socket} : GamePageProps) => {
   }, []);
 
   useEffect(() => {
-    socket.on("finishupdate3", (data) => {
+    socket.on("finishupdate2", (data) => {
       axios.put("http://localhost:3001/update", {id:id, score:data.score})
     });
   }, [socket]);
@@ -64,8 +64,8 @@ const SqlGame = ({socket} : GamePageProps) => {
       if (input === "Login was successful!  Welcome maxmiller!") 
       {
         alert("Congratulations! You entered the correct flag!");
-        socket.emit("updateScore_lev3", {userid:id, score: myscore})
-        navigate(`/game4/${id}`);
+        socket.emit("updateScore_lev2", {userid:id, score: myscore})
+        navigate(`/game3/${id}`);
       } else {
         alert("Incorrect flag. Please try again");
       }

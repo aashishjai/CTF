@@ -26,8 +26,8 @@ function App() {
             <Route index element={<SignUpPage socket={socket}/>}/>
             <Route path="home/:id" element={<Home />} />
             <Route path="game1/:id" element={<XSS socket={socket}/>} />
-            <Route path="game2/:id" element={<XssGameLv2 socket={socket}/>} />
-            <Route path="game3/:id" element={<SqlGame socket={socket}/>} />
+            <Route path="game3/:id" element={<XssGameLv2 socket={socket}/>} />
+            <Route path="game2/:id" element={<SqlGame socket={socket}/>} />
             <Route path="game4/:id" element={<XSS3 socket={socket}/>} />
             <Route path="game5/:id" element={<XSS4 socket={socket}/>} />
             <Route path="game6/:id" element={<SqlGame2 socket={socket}/>} />
